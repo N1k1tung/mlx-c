@@ -64,13 +64,15 @@ inline mlx::core::Dtype mlx_dtype_to_cpp(mlx_dtype type) {
 }
 inline mlx_device_type mlx_device_type_to_c(
     mlx::core::Device::DeviceType type) {
-  static mlx_device_type map[] = {MLX_CPU, MLX_GPU};
+  static mlx_device_type map[] = {MLX_CPU, MLX_GPU, MLX_ANE};
   return map[(int)type];
 }
 inline mlx::core::Device::DeviceType mlx_device_type_to_cpp(
     mlx_device_type type) {
   static mlx::core::Device::DeviceType map[] = {
-      mlx::core::Device::DeviceType::cpu, mlx::core::Device::DeviceType::gpu};
+      mlx::core::Device::DeviceType::cpu,
+      mlx::core::Device::DeviceType::gpu,
+      mlx::core::Device::DeviceType::ane};
   return map[(int)type];
 }
 } // namespace

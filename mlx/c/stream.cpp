@@ -116,3 +116,13 @@ extern "C" mlx_stream mlx_default_gpu_stream_new(void) {
     return mlx_stream_new_();
   }
 }
+
+extern "C" mlx_stream mlx_default_ane_stream_new(void) {
+  try {
+    return mlx_stream_new_(
+        mlx::core::default_stream(mlx::core::Device::DeviceType::ane));
+  } catch (std::exception& e) {
+    mlx_error(e.what());
+    return mlx_stream_new_();
+  }
+}
