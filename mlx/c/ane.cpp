@@ -18,11 +18,8 @@ extern "C" int mlx_ane_get_diagnostics(mlx_ane_diagnostics_snapshot* res) {
     res->total_ops = static_cast<uint64_t>(snapshot.total_ops);
     res->supported_ops = static_cast<uint64_t>(snapshot.supported_ops);
     res->ane_dispatches = static_cast<uint64_t>(snapshot.ane_dispatches);
-    res->ane_emulated_dispatches =
-        static_cast<uint64_t>(snapshot.ane_emulated_dispatches);
     res->gpu_fallbacks = static_cast<uint64_t>(snapshot.gpu_fallbacks);
     res->cpu_fallbacks = static_cast<uint64_t>(snapshot.cpu_fallbacks);
-    res->strict_rejections = static_cast<uint64_t>(snapshot.strict_rejections);
     res->compile_cache_hits = static_cast<uint64_t>(snapshot.compile_cache_hits);
     res->compile_cache_misses =
         static_cast<uint64_t>(snapshot.compile_cache_misses);

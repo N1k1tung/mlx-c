@@ -22,10 +22,8 @@ typedef struct mlx_ane_diagnostics_snapshot_ {
   uint64_t total_ops;
   uint64_t supported_ops;
   uint64_t ane_dispatches;
-  uint64_t ane_emulated_dispatches;
   uint64_t gpu_fallbacks;
   uint64_t cpu_fallbacks;
-  uint64_t strict_rejections;
   uint64_t compile_cache_hits;
   uint64_t compile_cache_misses;
   uint64_t partition_boundaries;
