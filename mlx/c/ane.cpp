@@ -7,6 +7,7 @@
 #include "mlx/backend/ane/diagnostics.h"
 #include "mlx/backend/ane/runtime.h"
 #include "mlx/c/error.h"
+#include "mlx/c/private/mlx.h"
 #include "mlx/c/private/string.h"
 
 extern "C" int mlx_ane_get_diagnostics(mlx_ane_diagnostics_snapshot* res) {
@@ -69,4 +70,14 @@ extern "C" int mlx_ane_runtime_unavailable_reason(mlx_string* res) {
     return 1;
   }
   return 0;
+}
+
+extern "C" int mlx_ane_pin_to_surface(mlx_array arr) {
+  try {
+    auto& a = mlx_array_get_(arr);
+    return mlx::core::ane::runtime().pin_to_surface(a) ? 0 : 1;
+  } catch (std::exception& e) {
+    mlx_error(e.what());
+    return 1;
+  }
 }
