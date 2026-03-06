@@ -1,5 +1,3 @@
-/* Copyright © 2026 Apple Inc. */
-
 #include "mlx/c/ane.h"
 
 #include <stdexcept>
